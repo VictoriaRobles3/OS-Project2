@@ -20,4 +20,67 @@ START: Process simulation started...
 FINISH: All processes completed.
 ----------------------------------------------------------------
 
-Output of:
+Output of: ProducerConsumerDemo.java
+
+[Time: 0.024s] [Consumer 2] Waiting to consume
+[Time: 0.028s] [Consumer 3] Waiting to consume
+[Time: 0.028s] [Consumer 1] Waiting to consume
+[Time: 0.026s] [Producer 1] Waiting to produce item 1
+[Time: 0.024s] [Producer 2] Waiting to produce item 1
+[Time: 0.076s] [Producer 1] Acquired lock, adding item 1
+[Time: 0.076s] [Producer 2] Acquired lock, adding item 1
+[Time: 0.076s] [Producer 1] Released lock, item 1 produced
+[Time: 0.076s] [Producer 2] Released lock, item 1 produced
+[Time: 0.076s] [Consumer 2] Acquired lock, removing item
+[Time: 0.078s] [Consumer 3] Acquired lock, removing item
+[Time: 0.078s] [Consumer 2] Released lock, consumed item 1
+[Time: 0.079s] [Consumer 3] Released lock, consumed item 1
+[Time: 0.192s] [Producer 2] Waiting to produce item 2
+[Time: 0.193s] [Producer 2] Acquired lock, adding item 2
+[Time: 0.193s] [Producer 2] Released lock, item 2 produced
+[Time: 0.193s] [Consumer 1] Acquired lock, removing item
+[Time: 0.193s] [Consumer 1] Released lock, consumed item 2
+[Time: 0.271s] [Consumer 3] Waiting to consume
+[Time: 0.353s] [Consumer 1] Waiting to consume
+[Time: 0.445s] [Producer 2] Waiting to produce item 3
+[Time: 0.445s] [Producer 2] Acquired lock, adding item 3
+[Time: 0.445s] [Producer 2] Released lock, item 3 produced
+[Time: 0.445s] [Consumer 3] Acquired lock, removing item
+[Time: 0.446s] [Consumer 3] Released lock, consumed item 3
+[Time: 0.506s] [Producer 1] Waiting to produce item 2
+[Time: 0.506s] [Producer 1] Acquired lock, adding item 2
+[Time: 0.506s] [Producer 1] Released lock, item 2 produced
+[Time: 0.506s] [Consumer 1] Acquired lock, removing item
+[Time: 0.507s] [Consumer 1] Released lock, consumed item 2
+[Time: 0.548s] [Consumer 3] Waiting to consume
+[Time: 0.839s] [Producer 2] Waiting to produce item 4
+[Time: 0.839s] [Producer 2] Acquired lock, adding item 4
+[Time: 0.839s] [Producer 2] Released lock, item 4 produced
+[Time: 0.839s] [Consumer 3] Acquired lock, removing item
+[Time: 0.84s] [Consumer 3] Released lock, consumed item 4
+[Time: 0.979s] [Producer 2] Waiting to produce item 5
+[Time: 0.979s] [Producer 2] Acquired lock, adding item 5
+[Time: 0.979s] [Producer 2] Released lock, item 5 produced
+[Time: 1.021s] [Consumer 3] Waiting to consume
+[Time: 1.021s] [Consumer 3] Acquired lock, removing item
+[Time: 1.021s] [Consumer 3] Released lock, consumed item 5
+[Time: 1.189s] [Consumer 2] Waiting to consume
+[Time: 1.273s] [Producer 1] Waiting to produce item 3
+[Time: 1.273s] [Producer 1] Acquired lock, adding item 3
+[Time: 1.273s] [Producer 1] Released lock, item 3 produced
+[Time: 1.273s] [Consumer 2] Acquired lock, removing item
+[Time: 1.274s] [Consumer 2] Released lock, consumed item 3
+[Time: 1.396s] [Producer 1] Waiting to produce item 4
+[Time: 1.396s] [Producer 1] Acquired lock, adding item 4
+[Time: 1.396s] [Producer 1] Released lock, item 4 produced
+[Time: 1.455s] [Consumer 2] Waiting to consume
+[Time: 1.455s] [Consumer 2] Acquired lock, removing item
+[Time: 1.456s] [Consumer 2] Released lock, consumed item 4
+[Time: 1.554s] [Consumer 1] Waiting to consume
+[Time: 1.657s] [Producer 1] Waiting to produce item 5
+[Time: 1.657s] [Producer 1] Acquired lock, adding item 5
+[Time: 1.657s] [Producer 1] Released lock, item 5 produced
+[Time: 1.658s] [Consumer 1] Acquired lock, removing item
+[Time: 1.658s] [Consumer 1] Released lock, consumed item 5
+[Time: 1.702s] [Consumer 1] Waiting to consume
+[Time: 1.973s] [Consumer 2] Waiting to consume
