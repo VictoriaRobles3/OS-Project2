@@ -12,40 +12,65 @@
  * Output includes thread actions with timestamps to observe proper coordination.
  */
 
-
-
-
-public class ProducerConsumerDemo {
+ public class ProducerConsumerDemo {
     public static void main(String[] args) {
-        BoundedBuffer buffer = new BoundedBuffer(5); 
+        BoundedBuffer buffer = new BoundedBuffer(5);
+        Thread[] producers = new Thread[2];
+        Thread[] consumers = new Thread[3];
 
-        for (int i = 1; i <= 2; i++) {
-            int producerId = i;
-            new Thread(() -> {
-                for (int j = 1; j <= 5; j++) {
+      
+        for (int i = 0; i < 2; i++) {
+            int producerId = i + 1;
+            producers[i] = new Thread(() -> {
+                for (int j = 1; j <= 3; j++) {
                     try {
                         buffer.produce(j, producerId);
                         Thread.sleep((int)(Math.random() * 1000));
                     } catch (InterruptedException e) {
                         e.printStackTrace();
+                        Thread.currentThread().interrupt();
                     }
                 }
-            }).start();
+            }, "Producer-" + producerId);
+            producers[i].start();
         }
 
-    
-        for (int i = 1; i <= 3; i++) {
-            int consumerId = i;
-            new Thread(() -> {
-                for (int j = 0; j < 4; j++) {
+     
+        for (int i = 0; i < 3; i++) {
+            int consumerId = i + 1;
+            consumers[i] = new Thread(() -> {
+                for (int j = 0; j < 2; j++) {
                     try {
                         buffer.consume(consumerId);
                         Thread.sleep((int)(Math.random() * 1200));
                     } catch (InterruptedException e) {
                         e.printStackTrace();
+                        Thread.currentThread().interrupt();
                     }
                 }
-            }).start();
+            }, "Consumer-" + consumerId);
+            consumers[i].start();
         }
+
+      
+        for (Thread t : producers) {
+            try {
+                t.join();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+                Thread.currentThread().interrupt();
+            }
+        }
+
+        for (Thread t : consumers) {
+            try {
+                t.join();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+                Thread.currentThread().interrupt();
+            }
+        }
+
+        System.out.println("[Main] All producers and consumers finished.");
     }
 }
